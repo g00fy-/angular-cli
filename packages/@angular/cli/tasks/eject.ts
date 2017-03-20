@@ -487,6 +487,8 @@ export default Task.extend({
           'json-loader',
           'karma-sourcemap-loader',
           'less-loader',
+          'pug-html-loader',
+          'pug-plugin-ng',
           'postcss-loader',
           'postcss-url',
           'raw-loader',

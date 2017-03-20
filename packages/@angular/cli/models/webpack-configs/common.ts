@@ -83,6 +83,13 @@ export function getCommonConfig(wco: WebpackConfigOptions) {
     module: {
       rules: [
         { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader', exclude: [nodeModules] },
+        {
+          test: /\.(pug|jade)$/,
+          loaders: [
+            'raw-loader',
+            { loader: 'pug-html-loader', query: { doctype: 'js', plugins: ['pug-plugin-ng'] } }
+          ]
+        },
         { test: /\.json$/, loader: 'json-loader' },
         { test: /\.html$/, loader: 'raw-loader' },
         { test: /\.(eot|svg)$/, loader: `file-loader?name=[name]${hashFormat.file}.[ext]` },
